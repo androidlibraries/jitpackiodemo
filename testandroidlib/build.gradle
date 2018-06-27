@@ -54,7 +54,7 @@ buildscript {  //必须
 
     dependencies {
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.android.tools.build:gradle:1.5.0' //1.5.0这个很关键 上传到jitpack.io 就用这个版本 其他版本都是失败
     }
 }
 
