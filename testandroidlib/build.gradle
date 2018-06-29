@@ -1,9 +1,10 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'  //必须
-group='com.github.jiangjiesheng'
+group = 'com.github.jiangjiesheng'
 //gradle-wrapper.properties必须加
 android {
-    compileSdkVersion 26 //compileSdkVersion = targetSdkVersion = 26 ,但是这里需要兼容com.android.support 改成修改版本
+    compileSdkVersion 26
+    //compileSdkVersion = targetSdkVersion = 26 ,但是这里需要兼容com.android.support 改成修改版本
     buildToolsVersion "26.0.2" //必须
     defaultConfig {
         minSdkVersion 15
@@ -29,17 +30,29 @@ android {
 buildscript {  //必须
 
     repositories {
+        // 如果有新的库引入,尽量把慢的放在后面
+
+        // 前4个推荐的 jitpack.io
         mavenLocal()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
-        maven { url 'https://repo1.maven.org/maven2/' }
-        maven { url "http://oss.sonatype.org/content/repositories/snapshots" }
-        maven { url "https://jitpack.io" }
-        jcenter { url "http://jcenter.bintray.com/" }
-        maven { url 'http://repo.jfrog.org/artifactory/gradle-plugins' }
-        maven { url "https://maven.google.com" }
         mavenCentral()
         jcenter()
+        google()
+
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+
+        maven { url 'https://repo1.maven.org/maven2/' }
+
+        maven { url "https://jitpack.io" }
+
+        jcenter { url "http://jcenter.bintray.com/" }
+
+        maven { url 'http://repo.jfrog.org/artifactory/gradle-plugins' }
+
+        maven { url "http://oss.sonatype.org/content/repositories/snapshots" }
+
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
+
+//        如果有新的库引入,尽量把慢的放在后面
     }
 
     dependencies {
