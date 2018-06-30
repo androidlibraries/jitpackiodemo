@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'  //必须
 group = 'com.github.jiangjiesheng'
-//gradle-wrapper.properties必须加
+//gradle-wrapper.properties不是必须加
 android {
     compileSdkVersion 26
     //compileSdkVersion = targetSdkVersion = 26 ,但是这里需要兼容com.android.support 改成修改版本
